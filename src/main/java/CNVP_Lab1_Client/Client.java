@@ -11,9 +11,9 @@ public class Client {
 
         Socket clientSocket = new Socket(ipAddressOfServer, port);
         if (clientSocket.isConnected()) {
-            System.out.println("Connected to server"+"\n");
-
+            System.out.println("Connected to server" + "\n");
         }
+
         return clientSocket;
     }
 
@@ -42,6 +42,5 @@ public class Client {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

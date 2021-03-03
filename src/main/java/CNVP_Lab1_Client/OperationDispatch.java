@@ -23,6 +23,4 @@ public class OperationDispatch {
             throw new IOException("Invalid number of operation");
         }
     }
-
-
 }

@@ -2,7 +2,6 @@ package CNVP_Lab1_Client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

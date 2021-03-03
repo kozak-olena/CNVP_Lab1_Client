@@ -1,6 +1,7 @@
 package CNVP_Lab1_Client;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -14,12 +15,17 @@ public class Main {
             try {
                 InetAddress ipAddressOfServer = UserInput.getInetAddress();
                 while (true) {
+
                     input = UserInput.readUserInput();
                     if (input.equals("exit")) {
                         break;
                     }
-                    socketClient = Client.createSocket(ipAddressOfServer);
-                    Client.sendReceive(socketClient, input);
+                    try {
+                        socketClient = Client.createSocket(ipAddressOfServer);
+                        Client.sendReceive(socketClient, input);
+                    } catch (ConnectException exception) {
+                        System.out.println("Server rejected" + "\n");
+                    }
                 }
             } finally {
                 if (socketClient != null) {

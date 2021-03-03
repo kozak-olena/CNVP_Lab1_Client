@@ -11,14 +11,6 @@ public class UserInput {
         System.out.println("exit");
     }
 
-    public static boolean tryParseInt(String value) {
-        try {
-            Integer.parseInt(value);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
 
     public static String readUserInput() {
         displayOptions();
@@ -48,14 +40,13 @@ public class UserInput {
         }
     }
 
-    public static boolean validateIp(String inputedIp) {
+    public static boolean validateIp(String inputIp) {
         boolean validation = false;
-        if (Validation.isValidInetAddress(inputedIp)) {
+        if (Validation.isValidInetAddress(inputIp)) {
             return true;
         } else {
-            System.out.print("The IP address " + inputedIp + " isn't valid");
+            System.out.print("The IP address " + inputIp + " isn't valid");
             return false;
         }
-
     }
 }
